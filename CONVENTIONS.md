@@ -82,7 +82,7 @@ In this order:
 1. **Hero image** (optional): only if it shows the package working, such as a terminal recording or a rendered result. Never decoration.
 2. **Title:** `# <Name>: <What It Is> for Laravel`, using the reader's vocabulary, for example "Mod: Modular Development for Laravel". A colon, not a dash: it can be typed on any keyboard.
 3. **Badges** (flat-square): Packagist version, tests, code style, total downloads.
-4. **Pitch:** two or three sentences. The problem in the reader's words, then what the package does about it.
+4. **Pitch:** two or three sentences. The problem in the reader's words, then what the package does about it. It must stand on its own, without the title: it is what search results, Packagist and link previews show. Start with the package name ("Mod is …").
 5. **Show it:** the smallest example of the package working, with its result beneath.
 6. **Pre-1.0 notice**, when it applies: one `> [!NOTE]`.
 7. **Highlights** (optional): three to five bullets, each a capability in plain words, each linking to its section.
