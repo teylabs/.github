@@ -79,7 +79,7 @@ The README is the package's landing page on GitHub and Packagist. Within one scr
 
 In this order:
 
-1. **Hero image** (optional): only if it shows the package working, such as a terminal recording or a rendered result. Never decoration.
+1. **Hero image** (optional): the package's brand banner, or an image of the package working, such as a terminal recording or a rendered result. Give a banner light and dark versions with `<picture>`, and keep it short so the pitch stays near the top.
 2. **Title:** `# <Name>: <What It Is> for Laravel`, using the reader's vocabulary, for example "Mod: Modular Development for Laravel". A colon, not a dash: it can be typed on any keyboard.
 3. **Badges** (flat-square): Packagist version, tests, code style, total downloads.
 4. **Pitch:** two or three sentences. The problem in the reader's words, then what the package does about it. It must stand on its own, without the title: it is what search results, Packagist and link previews show. Start with the package name ("Mod is …"). Then say why a reader needs it: the everyday problem, in plain words, before the solution.
