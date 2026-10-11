@@ -21,7 +21,7 @@ How Tey Labs packages are named, documented, tested and released. New packages s
 | Security | GitHub private vulnerability reporting on; policy from this repository |
 | Community | Discussions on (Q&A and Ideas); issues for reproducible bugs |
 | Issue templates | `config.yml` with links to the package's Discussions, security policy and issues; a bug report form |
-| Shared files | `SECURITY.md`, `CONTRIBUTING.md` and `FUNDING.yml` come from this repository; don't copy them into packages |
+| Shared files | `SECURITY.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` and `FUNDING.yml` come from this repository; don't copy them into packages |
 
 ## Tooling
 
