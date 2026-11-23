@@ -1,0 +1,84 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Tey Labs fleet preset. Every repo extends github>teylabs/.github:renovate-config.",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommitsDisabled"
+  ],
+  "timezone": "America/Toronto",
+  "schedule": ["before 6am on monday"],
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "platformAutomerge": false,
+  "automergeType": "pr",
+  "automergeSchedule": ["after 7pm every weekday", "before 6am every weekday", "every weekend"],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 0,
+  "labels": ["dependencies"],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["dependencies", "security"]
+  },
+  "osvVulnerabilityAlerts": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on the first day of the month"],
+    "automerge": false
+  },
+  "packageRules": [
+    {
+      "description": "Routine Composer patch and minor updates: one weekly PR, merged on green.",
+      "matchManagers": ["composer"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "composer non-major",
+      "automerge": true
+    },
+    {
+      "description": "Routine npm patch and minor updates: one weekly PR, merged on green.",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm non-major",
+      "automerge": true
+    },
+    {
+      "description": "GitHub Actions: one monthly PR, merged on green unless it is a major.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions",
+      "schedule": ["before 6am on the first day of the month"],
+      "automerge": true
+    },
+    {
+      "description": "Majors always go to the lead.",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["dependencies", "for-lead"]
+    },
+    {
+      "description": "0.x minors are breaking by semver: lead's call.",
+      "matchCurrentVersion": "<1.0.0",
+      "matchUpdateTypes": ["minor"],
+      "automerge": false,
+      "labels": ["dependencies", "for-lead"]
+    },
+    {
+      "description": "Packages that can change how an app looks: own PR, lead adopts with before/after shots.",
+      "matchPackageNames": ["tey/kit", "storyfeed/ui", "@tey/**", "tailwindcss", "@tailwindcss/**"],
+      "groupName": null,
+      "automerge": false,
+      "labels": ["dependencies", "for-lead", "look"]
+    },
+    {
+      "description": "Filament majors change the admin look and API: lead's call.",
+      "matchPackageNames": ["filament/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["dependencies", "for-lead", "look"]
+    },
+    {
+      "description": "Our own packages ship often; no release-age wait.",
+      "matchPackageNames": ["tey/**", "storyfeed/**", "@tey/**"],
+      "minimumReleaseAge": null
+    }
+  ]
+}
