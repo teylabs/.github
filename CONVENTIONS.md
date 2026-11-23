@@ -16,8 +16,8 @@ How Tey Labs packages are named, documented, tested and released. New packages s
 | --- | --- |
 | Default branch | `main`, with auto-delete of merged branches |
 | Merging | Squash merge, with a clean subject and body |
-| Workflows | `run-tests` (PHP × Laravel matrix, Ubuntu and Windows, lowest and stable), `phpstan`, `fix-php-code-style-issues`, `dependabot-auto-merge` |
-| Dependabot | GitHub Actions, weekly |
+| Workflows | `run-tests` (PHP × Laravel matrix, Ubuntu and Windows, lowest and stable), `phpstan`, `fix-php-code-style-issues` |
+| Dependency updates | Renovate: a `renovate.json` that extends `github>teylabs/.github:renovate-config`. No Dependabot version updates |
 | Security | GitHub private vulnerability reporting on; policy from this repository |
 | Community | Discussions on (Q&A and Ideas); issues for reproducible bugs |
 | Issue templates | `config.yml` with links to the package's Discussions, security policy and issues; a bug report form |
